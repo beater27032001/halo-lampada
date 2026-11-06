@@ -56,3 +56,47 @@
     scroll-behavior: auto !important;
   }
 }
+
+@layer components {
+  .range {
+    width: 100%;
+    height: 8px;
+    border-radius: 99px;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+  }
+  .range::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid var(--color-app);
+    box-shadow: 0 0 0 1px #555;
+    transition: transform 0.15s;
+  }
+  .range:active::-webkit-slider-thumb {
+    transform: scale(1.15);
+  }
+  .range::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid var(--color-app);
+  }
+  .range-kelvin {
+    background: linear-gradient(
+      90deg,
+      #ff9a3c,
+      #ffd2a1,
+      #fff3e6,
+      #e8f0ff,
+      #c9dcff
+    );
+  }
+  .range-brightness {
+    background: linear-gradient(90deg, #333, rgb(var(--k)));
+  }
+}
