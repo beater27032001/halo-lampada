@@ -1,6 +1,7 @@
 import { Beam } from '@organisms/Beam'
 import { ControlPanel } from '@organisms/ControlPanel'
 import { Hero } from '@organisms/Hero'
+import { Moods } from '@organisms/Moods'
 import { Nav } from '@organisms/Nav'
 import { LightProvider } from '@providers/LightProvider'
 import { MotionProvider } from '@providers/MotionProvider'
@@ -13,6 +14,7 @@ export default function Home() {
           <Nav />
           <Hero />
         </div>
+        <Moods />
         <Beam />
         <ControlPanel />
       </LightProvider>
