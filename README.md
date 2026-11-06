@@ -21,7 +21,7 @@ Página de produto de uma lâmpada inteligente fictícia. A página começa apag
 - **Página apagada com feixe de luz** que segue o cursor ou o toque; antes de alguém mexer, o feixe passeia sozinho
 - **Painel do app**: acender a página toda, cor de 2200 K a 6500 K, brilho de 5% a 100% e quatro cenas
 - **Cenas animadas**: cor e brilho mudam suavemente, sem saltos
-- **Luminária em anel** que acende na cor escolhida, escurece com o brilho e balança de leve no cabo
+- **Luminária em anel, em 3D**: aro de alumínio, difusor que emite a cor exata em kelvin, luz interna que ilumina o aro, e o conjunto girando e balançando no cabo
 - **Humores e escala de cor clicáveis**: cada cena ou faixa de kelvin aplica aquela luz na hora
 - **Ficha técnica** e preço com animação de entrada
 
@@ -29,14 +29,15 @@ Funciona com mouse e toque em qualquer tela, e respeita a preferência do sistem
 
 ## Tecnologias
 
-| Tecnologia                                                                   | Uso                                                   |
-| ---------------------------------------------------------------------------- | ----------------------------------------------------- |
-| [Next.js 16](https://nextjs.org) (App Router)                                | framework, renderização estática e fontes             |
-| [React 19](https://react.dev) + [TypeScript](https://www.typescriptlang.org) | interface e tipagem                                   |
-| [Motion](https://motion.dev)                                                 | feixe com mola, cenas animadas, entradas e transições |
-| [Tailwind CSS 4](https://tailwindcss.com)                                    | estilos e layout responsivo                           |
-| [Playwright](https://playwright.dev)                                         | geração dos prints deste README                       |
-| ESLint + Prettier                                                            | padrão de código e formatação                         |
+| Tecnologia                                                                                                          | Uso                                                   |
+| ------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| [Next.js 16](https://nextjs.org) (App Router)                                                                       | framework, renderização estática e fontes             |
+| [React 19](https://react.dev) + [TypeScript](https://www.typescriptlang.org)                                        | interface e tipagem                                   |
+| [React Three Fiber](https://r3f.docs.pmnd.rs) + [three.js](https://threejs.org) + [drei](https://drei.docs.pmnd.rs) | luminária em 3D, carregada só no navegador            |
+| [Motion](https://motion.dev)                                                                                        | feixe com mola, cenas animadas, entradas e transições |
+| [Tailwind CSS 4](https://tailwindcss.com)                                                                           | estilos e layout responsivo                           |
+| [Playwright](https://playwright.dev)                                                                                | geração dos prints deste README                       |
+| ESLint + Prettier                                                                                                   | padrão de código e formatação                         |
 
 ## Como rodar
 
@@ -72,7 +73,7 @@ src/
 │   └── LightProvider.tsx  estado da luz; vira variáveis CSS lidas pela página toda
 ├── components/
 │   ├── atoms/             PowerIcon, Counter
-│   ├── molecules/         Lamp, Slider, SectionTitle
+│   ├── molecules/         Lamp (cena 3D + reserva em CSS), Slider, SectionTitle
 │   └── organisms/         Beam, ControlPanel, Nav, Hero, Moods, ColorScale, Specs, Footer
 ├── lib/                   utilitário cn
 └── constants/             curvas de animação
