@@ -1,4 +1,5 @@
 import { Beam } from '@organisms/Beam'
+import { ColorScale } from '@organisms/ColorScale'
 import { ControlPanel } from '@organisms/ControlPanel'
 import { Hero } from '@organisms/Hero'
 import { Moods } from '@organisms/Moods'
@@ -15,6 +16,7 @@ export default function Home() {
           <Hero />
         </div>
         <Moods />
+        <ColorScale />
         <Beam />
         <ControlPanel />
       </LightProvider>
