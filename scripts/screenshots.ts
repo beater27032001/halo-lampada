@@ -78,7 +78,10 @@ await new Promise((resolve, reject) => {
   server.stdout.on('data', (d) => String(d).includes('Ready') && resolve(null))
   server.on('exit', (code) => reject(new Error(`next start saiu com ${code}`)))
 })
-const browser = await chromium.launch()
+// WebGL por software, para funcionar sem GPU
+const browser = await chromium.launch({
+  args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader'],
+})
 const errors: string[] = []
 
 for (const shot of SHOTS) {
