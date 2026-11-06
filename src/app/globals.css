@@ -1,0 +1,58 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-paper: #f3f4f2;
+  --color-ink: #151515;
+  --color-muted: #5d605c;
+  --color-line: #d9dbd6;
+  --color-night: #060607;
+  --color-app: #141416;
+  --color-app-line: #2a2a2e;
+  --color-app-fg: #f1f1ee;
+  --color-app-muted: #a9a9a4;
+  /* variáveis do next/font, definidas no <html> pelo layout */
+  --font-display: var(--font-instrument-serif), Georgia, serif;
+  --font-body: var(--font-geist), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, Menlo, monospace;
+}
+
+@utility wrap {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+  button {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 2px solid rgb(var(--k, 255 214 170));
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: rgb(var(--k, 255 214 170) / 0.6);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
